@@ -6,6 +6,9 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
+      <%= gravatar_for @user %>
+      <%= f.file_field :profilepic %>
+
       <%= f.label :name %>
       <%= f.text_field :name %>
 
@@ -21,7 +24,5 @@
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
   </div>
 </div>

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :profilepic
   has_secure_password
+  mount_uploader :profilepic, ProfilepicUploader
 
   #has_many :microposts, dependent: :destroy
   #has_many :relationships, foreign_key: "follower_id", dependent: :destroy
