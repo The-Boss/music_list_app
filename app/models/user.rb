@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_secure_password
   mount_uploader :profilepic, ProfilepicUploader
 
+  has_many :memberships
+  has_many :topics, through: :memberships 
   #has_many :microposts, dependent: :destroy
   #has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   #has_many :followed_users, through: :relationships, source: :followed
